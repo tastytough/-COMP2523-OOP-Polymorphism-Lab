@@ -1,4 +1,5 @@
 import { ISortable } from "./interfaces";
+
 class Node {
     next: Node | null = null;
     data: number;
@@ -7,7 +8,7 @@ class Node {
     }
   }
   
-  export class LinkedListGroup implements ISortable {
+export class LinkedListGroup implements ISortable {
     head: Node | null = null;
   
     // Create Node out of data and attach to end of list
