@@ -66,7 +66,6 @@ export class LinkedListGroup implements ISortable {
         this.at(rightPos).data = tempLeft;
     }
 }
-  
     print(): void {
       if (!this.head) {
         return;

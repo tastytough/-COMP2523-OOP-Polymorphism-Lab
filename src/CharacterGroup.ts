@@ -9,11 +9,21 @@ export class CharacterGroup {
         let strLength = this.data.length;
         return strLength;
     }
+
+    compare(leftPos: number, rightPos: number): boolean {
+        return this.data.charCodeAt(leftPos) > this.data.charCodeAt(rightPos)
+    }
+    swap(leftPos: number, rightPos: number): void {
+        let stringArray = this.data.split("");
+
+        let charLeft = stringArray[leftPos];
+        let charRight = stringArray[rightPos];
+
+        let temp = charLeft;
+        charLeft = charRight;
+        charRight = temp;
+
+        this.data = stringArray.join("");
+    }
 }
 
-// Creating an instance of the class
-const myCharacterGroup = new CharacterGroup("ABC");
-
-
-// Accessing the 'length' property using the getter
-console.log(myCharacterGroup.length);
