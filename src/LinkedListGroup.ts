@@ -55,11 +55,11 @@ export class LinkedListGroup implements ISortable {
     }
   
     compare(leftPos: number, rightPos: number): boolean {
-      // Implement this part yourself
+      return this.at(leftPos) > this.at(rightPos);
     }
   
     swap(leftPos: number, rightPos: number): void {
-      // Implement this part yourself
+      if(this.compare(leftPos, rightPos)) {
     }
   
     print(): void {
