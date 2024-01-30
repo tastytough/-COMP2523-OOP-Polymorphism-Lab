@@ -60,7 +60,12 @@ export class LinkedListGroup implements ISortable {
   
     swap(leftPos: number, rightPos: number): void {
       if(this.compare(leftPos, rightPos)) {
+        const tempLeft = this.at(leftPos).data;
+        const tempRight = this.at(rightPos).data;
+        this.at(leftPos).data = tempRight;
+        this.at(rightPos).data = tempLeft;
     }
+}
   
     print(): void {
       if (!this.head) {
