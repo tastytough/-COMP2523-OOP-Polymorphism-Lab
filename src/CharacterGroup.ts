@@ -1,4 +1,6 @@
-export class CharacterGroup {
+import { ISortable } from "./ISortable";
+
+export class CharacterGroup implements ISortable {
     data!: string;
 
     constructor(data: string) {
@@ -11,6 +13,7 @@ export class CharacterGroup {
     }
 
     compare(leftPos: number, rightPos: number): boolean {
+        // might have issue with uppercase but not a big deal
         return this.data.charCodeAt(leftPos) > this.data.charCodeAt(rightPos)
     }
     swap(leftPos: number, rightPos: number): void {

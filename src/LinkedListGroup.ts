@@ -1,4 +1,4 @@
-import { ISortable } from "./interfaces";
+import { ISortable } from "./ISortable";
 
 class Node {
     next: Node | null = null;
@@ -55,16 +55,14 @@ export class LinkedListGroup implements ISortable {
     }
   
     compare(leftPos: number, rightPos: number): boolean {
-      return this.at(leftPos) > this.at(rightPos);
+      return this.at(leftPos).data > this.at(rightPos).data;
     }
   
     swap(leftPos: number, rightPos: number): void {
-      if(this.compare(leftPos, rightPos)) {
         const tempLeft = this.at(leftPos).data;
         const tempRight = this.at(rightPos).data;
         this.at(leftPos).data = tempRight;
-        this.at(rightPos).data = tempLeft;
-    }
+        this.at(rightPos).data = tempLeft;  
 }
     print(): void {
       if (!this.head) {
